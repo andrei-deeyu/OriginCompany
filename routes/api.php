@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EmployeeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -17,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 // Route::resource('employees', EmployeeController::class);
 
 // Public Routes
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 Route::get('/employees', [EmployeeController::class, 'index']);
 Route::get('/employees/{id}', [EmployeeController::class, 'show']);
 Route::get('/employees/search/{name}', [EmployeeController::class, 'search']);
@@ -26,4 +29,5 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/employees', [EmployeeController::class, 'store']);
     Route::put('/employees/{id}', [EmployeeController::class, 'update']);
     Route::delete('/employees/{id}', [EmployeeController::class, 'store']);
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
