@@ -14,13 +14,16 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+// Route::resource('employees', EmployeeController::class);
 
-// Route::get('/employees', [EmployeeController::class, 'index']);
-// Route::post('/employees', [EmployeeController::class, 'store']);
-Route::resource('employees', EmployeeController::class);
-Route::get('/employees/search/{name}', [EmployeeController::class,
-'search']);
+// Public Routes
+Route::get('/employees', [EmployeeController::class, 'index']);
+Route::get('/employees/{id}', [EmployeeController::class, 'show']);
+Route::get('/employees/search/{name}', [EmployeeController::class, 'search']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Protected routes
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::post('/employees', [EmployeeController::class, 'store']);
+    Route::put('/employees/{id}', [EmployeeController::class, 'update']);
+    Route::delete('/employees/{id}', [EmployeeController::class, 'store']);
 });
