@@ -11,6 +11,16 @@ class Employee extends Model
     protected $fillable = [
         'name',
         'role',
-        'email'
+        'email',
     ];
+
+    // Relationship to Company
+    public function company() {
+        return $this->belongsTo(Company::class, 'company_id');
+    }
+
+    // Relationship to Project
+    public function project() {
+        return $this->belongsTo(Project::class, 'project_id');
+    }
 }

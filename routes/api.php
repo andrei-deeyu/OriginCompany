@@ -28,6 +28,6 @@ Route::get('/employees/search/{name}', [EmployeeController::class, 'search']);
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/employees', [EmployeeController::class, 'store']);
     Route::put('/employees/{id}', [EmployeeController::class, 'update']);
-    Route::delete('/employees/{id}', [EmployeeController::class, 'store']);
+    Route::delete('/employees/{id}', [EmployeeController::class, 'destroy']);
     Route::post('/logout', [AuthController::class, 'logout']);
 });
