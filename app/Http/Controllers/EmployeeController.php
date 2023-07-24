@@ -23,7 +23,9 @@ class EmployeeController extends Controller
         $request->validate([
             'name' => 'required',
             'role' => 'required',
-            'email' => 'required'
+            'email' => 'required',
+            'company_id' => 'required',
+            'project_id' => 'required'
         ]);
         return Employee::create($request->all());
     }

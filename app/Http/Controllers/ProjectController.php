@@ -51,4 +51,15 @@ class ProjectController extends Controller
     {
         return Project::destroy($id);
     }
+
+    /**
+     * Search for a name
+     *
+     * @param str $name
+     * @return \Illuminate\Http\Response
+     */
+    public function search(string $name)
+    {
+        return Project::where('name', 'like', '%'.$name.'%')->get();
+    }
 }

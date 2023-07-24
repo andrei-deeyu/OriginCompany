@@ -9,7 +9,8 @@ class Project extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name'
+        'name',
+        'company_id'
     ];
 
     // Relationship with employees

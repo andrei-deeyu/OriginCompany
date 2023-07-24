@@ -52,4 +52,15 @@ class CompanyController extends Controller
     {
         return Company::destroy($id);
     }
+
+    /**
+     * Search for a name
+     *
+     * @param str $name
+     * @return \Illuminate\Http\Response
+     */
+    public function search(string $name)
+    {
+        return Company::where('name', 'like', '%'.$name.'%')->get();
+    }
 }

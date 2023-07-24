@@ -12,6 +12,8 @@ class Employee extends Model
         'name',
         'role',
         'email',
+        'company_id',
+        'project_id'
     ];
 
     // Relationship to Company
