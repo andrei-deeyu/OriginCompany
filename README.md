@@ -1,18 +1,27 @@
-# [OriginCompany  - HR system](#here)
+# [OriginCompany  - HR system](https://github.com/andrei-deeyu/OriginCompany)
 #### A small web application that allows you to manage company projects and employees
 
-## [Get started](#here)
-### 1. Migrate & seed the database
+## [Get started](https://github.com/andrei-deeyu/OriginCompany#get-started)
+
+### 1. Import packages & create the vendor folder, along with the autoload script.
+```
+composer install
+```
+
+### 2. Create .env file
+Copy the text from `.env.example` and place it in the newly created .env file
+
+### 2. Migrate & seed the database
 ```
 php artisan migrate --seed
 ```
 
-### 2. Run Docker
+### 3. Run Docker
 ```
 docker-compose up
 ```
 
-## [API Routes](#here)
+## [API Routes](https://github.com/andrei-deeyu/OriginCompany#api-routes)
 ### 1. Public Routes
 ##### Auth
 ```
