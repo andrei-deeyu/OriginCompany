@@ -1,6 +1,6 @@
 # [OriginCompany  - HR system](https://github.com/andrei-deeyu/OriginCompany)
-#### A small web application that allows you to manage company projects and employees
-
+#### A small RESTful API that allows you to manage companies, their employees, and associated projects.
+- read [FreightCentralized](https://github.com/andrei-deeyu/FreightCentralized) to see a more complex project.
 ## [Get started](https://github.com/andrei-deeyu/OriginCompany#get-started)
 
 ### 1. Import packages & create the vendor folder, along with the autoload script.
